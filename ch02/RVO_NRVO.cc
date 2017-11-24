@@ -9,8 +9,8 @@ public:
     A() { std:: cout << "default constructor" << std::endl; }
     A(int a) : a_(a) { std::cout << "constructor" << std::endl; }
 
-    A(const A& C) {
-        a_ = C.a_;
+    A(const A& B) {
+        a_ = B.a_;
         std::cout << "copy constructor" << std::endl;
     }
 };
