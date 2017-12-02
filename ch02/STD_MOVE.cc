@@ -15,9 +15,19 @@ public:
         std::cout << "copy constructor" << std::endl;
     }
 
+    //A& operator=(A& B) {
+        //a_ = B.a_;
+        //std::cout << "copy= constructor" << std::endl;
+    //}
+
+    //A& operator=(A&& B) {
+        //a_ = B.a_;
+        //std::cout << "move= constructor" << std::endl;
+    //}
+
     A& operator=(A B) {
         a_ = B.a_;
-        std::cout << "= constructor" << std::endl;
+        std::cout << "move= constructor" << std::endl;
     }
 };
 
@@ -32,5 +42,6 @@ int main() {
     A a;
     A b;
     b = std::move(a);
+    //b = a;
     return 0;
 }
