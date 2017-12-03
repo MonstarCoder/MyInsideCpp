@@ -15,19 +15,20 @@ public:
         std::cout << "copy constructor" << std::endl;
     }
 
-    //A& operator=(A& B) {
-        //a_ = B.a_;
-        //std::cout << "copy= constructor" << std::endl;
-    //}
-
-    //A& operator=(A&& B) {
-        //a_ = B.a_;
-        //std::cout << "move= constructor" << std::endl;
-    //}
-
-    A& operator=(A B) {
+    A(A&& B) {
         a_ = B.a_;
-        std::cout << "move= constructor" << std::endl;
+        std::cout << "move constructor" << std::endl;
+    }
+
+    A& operator=(A& B) {
+        a_ = B.a_;
+        std::cout << "copy assignment" << std::endl;
+    }
+
+//private:
+    A& operator=(A&& B) {
+        a_ = B.a_;
+        std::cout << "move assignment" << std::endl;
     }
 };
 
@@ -37,11 +38,10 @@ A fun() {
 }
 
 int main() {
-    //class A a;
-    //a = fun();
-    A a;
-    A b;
-    b = std::move(a);
-    //b = a;
+    class A a = fun();
+    //A a;
+    //A b(std::move(a));
+    class A b = std::move(a);
+    b = a;
     return 0;
 }
