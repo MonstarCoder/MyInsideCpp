@@ -9,7 +9,7 @@ virtual void fun() {};
 };
 
 int main() {
-    class A a();
+    class A a;
     cout << "sieof char: "<< sizeof(char) << endl
         << "sieof ptr: "<< sizeof(char*) << endl
         << "sieof A: "<< sizeof(A) << endl;
