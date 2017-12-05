@@ -5,8 +5,8 @@ using std::endl;
 
 struct A {
 char a_;
-int b_;
-char c_;
+char b_;
+int c_;
 virtual void fun() {};
 };
 
