@@ -16,8 +16,8 @@ public:
 
 class C {
 public:
-    int a_ = 10;
-    char b_ = 'b';
+    int a_;
+    char b_;
     virtual int fun() { return 0; }
 };
 
